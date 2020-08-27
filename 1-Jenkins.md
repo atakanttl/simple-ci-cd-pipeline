@@ -31,8 +31,8 @@ Open “.bash_profile” and set the “JAVA_HOME” as below.
 > export JAVA_HOME  
 > PATH=$PATH:$JAVA_HOME  
 
-Save the file and exit & relog as root.  
-6. Check the java version again.  
+6. Save the file and exit & relog as root.  
+7. Check the java version again.  
 
 # Part 4 - Installing Jenkins  
 1. Get the latest version of jenkins from https://pkg.jenkins.io/redhat-stable/ and install (Amazon Linux is compatible with redhat/centos version).  
@@ -84,14 +84,14 @@ Check if the zipped file is unzipped correctly (there are bin, boot, conf, lib, 
 > M2=$M2_HOME/bin  
 > PATH=<Existing_PATH>:$M2_HOME:$M2  
 
-Save and exit & relog as root, check the maven version.  
+3. Save and exit & relog as root, check the maven version.  
 `$ mvn --version`  
-3. Open Jenkins page, select “Manage Jenkins” → “Manage Plugins” → “Available”. Search “maven”, select “Maven Integration”, “Maven Invoker” and then install without restart.  
-4. “Manage Jenkins” → “Global Tool Configuration”. Find the “Maven” section. Uncheck “Install automatically”.  
+4. Open Jenkins page, select “Manage Jenkins” → “Manage Plugins” → “Available”. Search “maven”, select “Maven Integration”, “Maven Invoker” and then install without restart.  
+5. “Manage Jenkins” → “Global Tool Configuration”. Find the “Maven” section. Uncheck “Install automatically”.  
 > Name: M2_HOME  
 > MAVEN_HOME: /opt/maven  
 
-3. Apply, Save.  
+6. Apply, Save.  
 
 # Part 8 - Create a Maven job  
 1. Create a “New Item” at the home page. Select “Maven Project”. Go to your github repo, copy the clone link. Under “Source Code Management” select “Git”, paste the link to the “Repository URL”.  
@@ -103,26 +103,3 @@ Save and exit & relog as root, check the maven version.
 4. You can execute the job with “Build Now”.  
 5. You can see the workspace directory with  
 `$ cd /var/lib/jenkins/workspace/`  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
