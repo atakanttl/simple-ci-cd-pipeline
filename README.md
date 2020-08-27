@@ -6,5 +6,5 @@ This repo contains the steps to reproduce a simple webapp project (https://githu
 3. Ansible pulls the image from the Dockerhub and runs a container inside the Docker host machine.
 
 
-
-`<addr>` element here instead.
+The steps are given in 1-Jenkins.md, 2-Docker.md, 3-Ansible.md.  
+The items needed for this project is given in "files" directory.
