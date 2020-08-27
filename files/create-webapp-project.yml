@@ -1,0 +1,25 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+
+  - name: Stop the old container if it exists
+    command: docker stop simple-webapp-container
+    ignore_errors: yes
+
+  - name: Remove the old container
+    command: docker rm simple-webapp-container
+    ignore_errors: yes
+
+  - name: Remove the current docker image
+    command: docker rmi atakantatli/simple-webapp-image:latest
+    ignore_errors: yes
+    
+  - name: Pull the Docker image from Dockerhub
+    command: docker pull atakantatli/simple-webapp-image:latest
+
+  - name: Create a container
+    command: docker run -d --name simple-webapp-container -p 8080:8080 atakantatli/simple-webapp-image
+    
+    

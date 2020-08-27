@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+  - name: Create a docker image via Dockerfile
+    command: docker build -t simple-webapp-image:latest .
+    args:
+      chdir: /opt/docker
+      
+  - name: Create a tag to the image
+    command: docker tag simple-webapp-image atakantatli/simple-webapp-image
+
+  - name: Push image to the Dockerhub
+    command: docker push atakantatli/simple-webapp-image
+
+  - name: Remove Docker images from the Ansible server
+    command: docker rmi simple-webapp-image:latest atakantatli/simple-webapp-image
+    ignore_errors: yes

@@ -1,0 +1,24 @@
+Jenkins job:
+    Name: Deploy_on_container_using_ansible
+
+    Source Code Management:
+        Git:
+            Repository URL: https://github.com/atakanttl/simple-web-app.git
+    
+    Build Triggers:
+        Check Poll SCM:
+            Schedule: * * * * *
+    
+    Build:
+        Root POM: pom.xml
+        Goals and options: clean install package
+
+    Post-Build Actions: Send build artifacts over SSH
+        SSH Server:
+            Name: ansible-server
+            Transfers:
+                Source files: webapp/target/*.war
+                Remove prefix: webapp/target
+                Remote directory: //opt//docker
+                Exec command: ansible-playbook -i /opt/docker/hosts /opt/docker/create-simple-devops-image.yml --limit localhost;
+                            ansible-playbook -i /opt/docker/hosts /opt/docker/create-simple-devops-project.yml --limit "DOCKER-HOST-PRIVATE-IP"
