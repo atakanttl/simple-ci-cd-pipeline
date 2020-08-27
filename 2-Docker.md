@@ -35,9 +35,10 @@ Check “/usr/local/tomcat” “webapps” folder. If you get a 404 error, it s
 # Integrate Docker with Jenkins  
 1. Login to your Jenkins page as admin. Go to “Manage Jenkins” → “Manage Plugins” → “Available”. Search “Publish Over SSH - Send build artifacts over SSH”, install without restart.  
 2. “Manage Jenkins” → “Configure System”. Find the “Publish over SSH” section. Add an SSH Server. Get the ip address of the docker host (under eth0:inet).  
-> Name: docker-host  
-> Hostname: "DOCKER-HOST-PRIVATE-IP"  
-> Username: dockeradmin  
+
+    > Name: docker-host  
+    > Hostname: "DOCKER-HOST-PRIVATE-IP"  
+    > Username: dockeradmin`  
 
 Select “Advanced”, “Use the password authentication”. Enter the “Passphrase / Password”.  
 3. Login to your docker host. You should enable password based authentication.  
