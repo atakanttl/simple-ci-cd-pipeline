@@ -1,10 +1,10 @@
 The setup is done through AWS EC2 instances.  
 
 # Part 1 - Creating an EC2 instance  
-Create a new EC2 instance named "Docker_Host" based on the instructions at "1-Jenkins.md".  
+Create a new EC2 instance named "Docker_Host" based on the instructions at [1-Jenkins.md](https://github.com/atakanttl/simple-devops-project/blob/master/1-Jenkins.md).  
 
 # Part 2 - Connect through SSH  
-Connect to the "Docker_Host" via SSH based on the instructions at "1.Jenkins.md".  
+Connect to the "Docker_Host" via SSH based on the instructions at [1-Jenkins.md](https://github.com/atakanttl/simple-devops-project/blob/master/1-Jenkins.md).  
 
 # Part 3 - Install Docker  
 1. Become root.  
