@@ -1,10 +1,10 @@
 The setup is done through AWS EC2 instances.  
 
 # Part 1 - Creating an EC2 instance  
-Create a new EC2 instance named "Ansible_Server" based on the instructions at "1-Jenkins.md".  
+Create a new EC2 instance named "Ansible_Server" based on the instructions at [1-Jenkins.md](https://github.com/atakanttl/simple-devops-project/blob/master/1-Jenkins.md).  
 
 # Part 2 - Connect through SSH  
-Connect to the "Ansible_Server" via SSH based on the instructions at "1.Jenkins.md".  
+Connect to the "Ansible_Server" via SSH based on the instructions at [1-Jenkins.md](https://github.com/atakanttl/simple-devops-project/blob/master/1-Jenkins.md).  
 
 # Part 3 - Install Ansible  
 1. Install python & pip.  
