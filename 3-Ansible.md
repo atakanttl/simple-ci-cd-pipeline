@@ -91,25 +91,8 @@ Get the IP address from the Docker host, add it to the hosts file.
 `$ docker login`  
 
 # Part 6 - Create a new Jenkins Job
-- Instructions are at Jenkins_Job file.  
+- Instructions are at [Jenkins_Job](https://github.com/atakanttl/simple-devops-project/blob/master/files/Jenkins-Job.txt) file.  
 
 # Part 7 - Launch webapp  
 - You can launch the webapp by opening a browser and entering "DOCKER-HOST-PRIVATE-IP":8080/webapp
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
