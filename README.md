@@ -7,5 +7,5 @@ All servers are built inside the AWS EC2 instances.
 3. Ansible pulls the image from the Dockerhub and runs a container inside the Docker host machine.
 
 
-The steps are given in 1-Jenkins.md, 2-Docker.md, 3-Ansible.md.  
-The items needed for this project is given in "files" directory.
+The steps are given in [1-Jenkins.md](https://github.com/atakanttl/simple-devops-project/blob/master/1-Jenkins.md), [2-Docker.md](https://github.com/atakanttl/simple-devops-project/blob/master/2-Docker.md), [3-Ansible.md](https://github.com/atakanttl/simple-devops-project/blob/master/3-Ansible.md).  
+The items needed for this project is given in [files](https://github.com/atakanttl/simple-devops-project/tree/master/files) directory.
