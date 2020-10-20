@@ -43,13 +43,13 @@ Open “.bash_profile” and set the “JAVA_HOME” as below.
 2. Run Jenkins service and make it start at boot.  
 `$ service jenkins start`  
 `$ chkconfig jenkins on`  
-3. Paste your Jenkins_Server IP address to a browser and append “:8080” (default port which jenkins run).  
+3. Paste your Jenkins_Server IP address to a browser and append “:8080” (default port which jenkins runs on).  
 4. Unlock Jenkins with the provided guide.  
 `$ cat /var/lib/jenkins/secrets/initialAdminPassword`  
 Copy the password and paste it into the “Administrator Password”.  
 5. Skip “Customize Jenkins” step.  
 6. Click at the top right “admin”, and then select “Configure” at the left pane. Change the password, relog with the new password.  
-7. At the home page, select “Manage Jenkins” → “Global Tool Configuration” → “Add JDK” and as Name, write “JAVA_HOME”. Go back into SSH client, write `$ echo $JAVA_HOME` and copy the path, paste it into the JAVA_HOME section at Jenkins page.  
+7. At the home page, select “Manage Jenkins” → “Global Tool Configuration” → “Add JDK” and as Name, write `JAVA_HOME`. Go back into SSH client, write `$ echo $JAVA_HOME` and copy the path, paste it into the JAVA_HOME section at Jenkins page.  
 8. Click Apply, Save.  
 
 # Part 5 - Running the first Jenkins Job  
