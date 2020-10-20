@@ -49,7 +49,7 @@ Open “.bash_profile” and set the “JAVA_HOME” as below.
 Copy the password and paste it into the “Administrator Password”.  
 5. Skip “Customize Jenkins” step.  
 6. Click at the top right “admin”, and then select “Configure” at the left pane. Change the password, relog with the new password.  
-7. At the home page, select “Manage Jenkins” → “Global Tool Configuration” → “Add JDK” and as Name, write `JAVA_HOME`. Go back into SSH client, write `$ echo $JAVA_HOME` and copy the path, paste it into the JAVA_HOME section at Jenkins page.  
+7. At the home page, select “Manage Jenkins” → “Global Tool Configuration” → “Add JDK” and as Name, write `JAVA_HOME`. Go back into SSH client, run `$ echo $JAVA_HOME` and copy the path, paste it into the JAVA_HOME section at Jenkins page.  
 8. Click Apply, Save.  
 
 # Part 5 - Running the first Jenkins Job  
