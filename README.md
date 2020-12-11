@@ -1,4 +1,4 @@
-# simple-devops-project
+# Simple CI-CD Project
 This repository contains the steps to reproduce a [simple webapp project](https://github.com/atakanttl/simple-web-app).  
 All servers are built inside the AWS EC2 instances.  
 
