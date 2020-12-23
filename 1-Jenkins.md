@@ -1,9 +1,18 @@
 The setup is done through AWS EC2 instances.  
 
-- [Part 1 - Creating an EC2 instance](#-Part-1---Creating-an-EC2-instance)  
-- [Part 8 - Create a Maven job](#part-8---create-a-maven-job)
+# Table of contents
+
+- [Part 1 - Creating an EC2 instance](#part-1---creating-an-ec2-instance)  
+- [Part 2 - Connect through SSH](#part-2---connect-through-ssh)  
+- [Part 3 - Installing prerequisites](#part-3---installing-prerequisites)  
+- [Part 4 - Installing Jenkins](#part-4---installing-jenkins)  
+- [Part 5 - Running the first Jenkins Job](#part-5---running-the-first-jenkins-job)  
+- [Part 6 - Install git and integrate it to Jenkins](#part-6---install-git-and-integrate-it-to-jenkins)  
+- [Part 7 - Maven Setup](#part-7---maven-setup)
+- [Part 8 - Create a Maven job](#part-8---create-a-maven-job)  
 
 # Part 1 - Creating an EC2 instance  
+
 1. Select “Services”, under the “Compute” tab, select “EC2”. After that click “Launch instance”.
 2. Select “Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type”.
 3. Select a free tier eligible instance type, e.g. “t2.micro”.
@@ -12,12 +21,14 @@ The setup is done through AWS EC2 instances.
 6. At “Step 6: Configure Security Group”, select a new “security group name”, e.g. "Simple-SG”. Add a new rule “Custom TCP”, select “Port Range” 8080 as the Jenkins server runs on the port 8080.
 7. Select “Launch” at Step 7. Choose an existing key pair and select the key pair you have created.
 
-# Part 2 - Connect through SSH
+# Part 2 - Connect through SSH  
+
 1. After creating the EC2 instance, copy the “IPv4 Public IP”.
 2. Launch MobaXterm (you can choose another SSH client like PuTTy but with MobaXterm, you don’t need to convert the .pem key.).
 3. Start a new session, choose SSH. Remote host is the public IP you have copied, the username is “ec2-user”. Select “Use private key” and select your “.pem” key.
 
 # Part 3 - Installing prerequisites  
+
 1. Login as root.  
 `$ sudo su -`  
 2. Change hostname and relog as root.  
@@ -39,6 +50,7 @@ Open “.bash_profile” and set the “JAVA_HOME” as below.
 7. Check the java version again.  
 
 # Part 4 - Installing Jenkins  
+
 1. Get the latest version of jenkins from https://pkg.jenkins.io/redhat-stable/ and install (Amazon Linux is compatible with redhat/centos version).  
 `$ yum -y install wget`  
 `$ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo`  
@@ -57,6 +69,7 @@ Copy the password and paste it into the “Administrator Password”.
 8. Click Apply, Save.  
 
 # Part 5 - Running the first Jenkins Job  
+
 1. Create a “New Item” at the home page.  
 2. Enter an item name as “First_test_job”, select “Freestyle project”.  
 3. Provide a description.  
@@ -67,6 +80,7 @@ Copy the password and paste it into the “Administrator Password”.
 8. You can see the console log from the circle icon at the “Build History” section.  
 
 # Part 6 - Install git and integrate it to Jenkins  
+
 1. Install git.  
 `$ yum install git -y`  
 2. Open Jenkins page, select “Manage Jenkins” → “Manage Plugins” → “Available” → Search “github” and select “GitHub - This plugin integrates GitHub to Jenkins.” → Select “Install without restart”.  
@@ -76,6 +90,7 @@ Copy the password and paste it into the “Administrator Password”.
 4. Apply, Save.  
 
 # Part 7 - Maven Setup  
+
 1. Download maven packages https://maven.apache.org/download.cgi onto Jenkins server. In this case, /opt/maven is used as the installation directory  
 `$ mkdir /opt/maven`  
 `$ cd /opt/maven`  
@@ -98,6 +113,7 @@ Check if the zipped file is unzipped correctly (there are bin, boot, conf, lib, 
 6. Apply, Save.  
 
 # Part 8 - Create a Maven job  
+
 1. Create a “New Item” at the home page. Select “Maven Project”. Go to your github repo, copy the clone link. Under “Source Code Management” select “Git”, paste the link to the “Repository URL”.  
 2. Under the “Build” section:  
 > Root POM: pom.xml  
