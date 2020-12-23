@@ -1,4 +1,7 @@
 The setup is done through AWS EC2 instances.  
+
+- [Part 1 - Creating an EC2 instance](#-Part-1-Creating-an-EC2-instance)  
+
 # Part 1 - Creating an EC2 instance  
 1. Select “Services”, under the “Compute” tab, select “EC2”. After that click “Launch instance”.
 2. Select “Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type”.
