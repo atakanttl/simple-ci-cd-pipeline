@@ -1,12 +1,25 @@
 The setup is done through AWS EC2 instances.  
 
+# Table of contents
+
+- [Part 1 - Creating an EC2 instance](#part-1---creating-an-ec2-instance)  
+- [Part 2 - Connect through SSH](#part-2---connect-through-ssh)  
+- [Part 3 - Install Ansible](#part-3---install-ansible)  
+- [Part 4 - Integrate Ansible with Jenkins](#part-4---integrate-ansible-with-jenkins)  
+- [Part 5 - Create a new Ansible playbook](#part-5---create-a-new-ansible-playbook)  
+- [Part 6 - Create a new Jenkins Job](#part-6---create-a-new-jenkins-job)  
+- [Part 7 - Launch webapp](#part-7---launch-webapp)
+
 # Part 1 - Creating an EC2 instance  
+
 Create a new EC2 instance named "Ansible_Server" based on the instructions at [1-Jenkins.md](https://github.com/atakanttl/simple-devops-project/blob/master/1-Jenkins.md).  
 
 # Part 2 - Connect through SSH  
+
 Connect to the "Ansible_Server" via SSH based on the instructions at [1-Jenkins.md](https://github.com/atakanttl/simple-devops-project/blob/master/1-Jenkins.md).  
 
 # Part 3 - Install Ansible  
+
 1. Install python & pip.  
 `$ yum install python -y`  
 `$ yum install python-pip -y`  
@@ -77,6 +90,7 @@ Get the IP address from the Docker host, add it to the hosts file.
 - Apply, save.  
 
 # Part 5 - Create a new Ansible playbook  
+
 1. Create a new directory inside Ansible server (as ansadmin user).  
 `$ sudo mkdir /opt/docker`  
 `$ sudo chown -R ansadmin:ansadmin /opt/docker`  
@@ -90,9 +104,10 @@ Get the IP address from the Docker host, add it to the hosts file.
 5. Login to docker as root user in both “Ansible Server” and “Docker Host”.  
 `$ docker login`  
 
-# Part 6 - Create a new Jenkins Job
+# Part 6 - Create a new Jenkins Job  
+
 - Instructions are at [Jenkins_Job](https://github.com/atakanttl/simple-devops-project/blob/master/files/Jenkins-Job.txt) file.  
 
 # Part 7 - Launch webapp  
-- You can launch the webapp by opening a browser and entering "DOCKER-HOST-PRIVATE-IP":8080/webapp
 
+- You can launch the webapp by opening a browser and entering "DOCKER-HOST-PRIVATE-IP":8080/webapp
