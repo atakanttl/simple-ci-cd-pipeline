@@ -1,6 +1,7 @@
 The setup is done through AWS EC2 instances.  
 
-- [Part 1 - Creating an EC2 instance](#-Part-1-Creating-an-EC2-instance)  
+- [Part 1 - Creating an EC2 instance](#-Part-1---Creating-an-EC2-instance)  
+- [Part 8 - Create a Maven job](Part-8---Create-a-Maven-job)
 
 # Part 1 - Creating an EC2 instance  
 1. Select “Services”, under the “Compute” tab, select “EC2”. After that click “Launch instance”.
