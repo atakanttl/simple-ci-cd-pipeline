@@ -1,12 +1,22 @@
 The setup is done through AWS EC2 instances.  
 
+# Table of contents  
+
+- [Part 1 - Creating an EC2 instance](#part-1---creating-an-ec2-instance)  
+- [Part 2 - Connect through SSH](#part-2---connect-through-ssh)  
+- [Part 3 - Install Docker](#part-3---install-docker)  
+- [Part 4 - Integrate Docker with Jenkins](#part-4---integrate-docker-with-jenkins)
+
 # Part 1 - Creating an EC2 instance  
+
 Create a new EC2 instance named "Docker_Host" based on the instructions at [1-Jenkins.md](https://github.com/atakanttl/simple-devops-project/blob/master/1-Jenkins.md).  
 
 # Part 2 - Connect through SSH  
+
 Connect to the "Docker_Host" via SSH based on the instructions at [1-Jenkins.md](https://github.com/atakanttl/simple-devops-project/blob/master/1-Jenkins.md).  
 
 # Part 3 - Install Docker  
+
 1. Become root.  
 2. Change hostname to “docker-host”, relog as root.  
 3. Install docker.  
@@ -32,7 +42,8 @@ This runs the tomcat server in detached mode with the exposed port 8080.
 Above command lets you access the shell of the container.  
 Check “/usr/local/tomcat” “webapps” folder. If you get a 404 error, it should be empty. You can copy the files inside “webapps.dist” to the “webapps” folder. The error should be gone.  
 
-# Integrate Docker with Jenkins  
+# Part 4 - Integrate Docker with Jenkins  
+
 1. Login to your Jenkins page as admin. Go to “Manage Jenkins” → “Manage Plugins” → “Available”. Search “Publish Over SSH - Send build artifacts over SSH”, install without restart.  
 2. “Manage Jenkins” → “Configure System”. Find the “Publish over SSH” section. Add an SSH Server. Get the ip address of the docker host (under eth0:inet).  
  
