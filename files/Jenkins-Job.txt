@@ -3,7 +3,7 @@ Jenkins job:
 
     Source Code Management:
         Git:
-            Repository URL: https://github.com/atakanttl/simple-web-app.git
+            Repository URL: <YOUR-GITHUB-REPOSITORY-URL>
     
     Build Triggers:
         Check Poll SCM:
@@ -21,4 +21,4 @@ Jenkins job:
                 Remove prefix: webapp/target
                 Remote directory: //opt//docker
                 Exec command: ansible-playbook -i /opt/docker/hosts /opt/docker/create-simple-devops-image.yml --limit localhost;
-                            ansible-playbook -i /opt/docker/hosts /opt/docker/create-simple-devops-project.yml --limit "DOCKER-HOST-PRIVATE-IP"
+                            ansible-playbook -i /opt/docker/hosts /opt/docker/create-simple-devops-project.yml --limit <DOCKER-HOST-PRIVATE-IP>
