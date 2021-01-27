@@ -1,3 +1,4 @@
+# Replace <USERNAME> with your Docker Hub username
 ---
 - hosts: all
   become: true
@@ -9,11 +10,11 @@
       chdir: /opt/docker
       
   - name: Create a tag to the image
-    command: docker tag simple-webapp-image atakantatli/simple-webapp-image
+    command: docker tag simple-webapp-image <USERNAME>/simple-webapp-image
 
   - name: Push image to the Dockerhub
-    command: docker push atakantatli/simple-webapp-image
+    command: docker push <USERNAME>/simple-webapp-image
 
   - name: Remove Docker images from the Ansible server
-    command: docker rmi simple-webapp-image:latest atakantatli/simple-webapp-image
+    command: docker rmi simple-webapp-image:latest <USERNAME>/simple-webapp-image
     ignore_errors: yes
