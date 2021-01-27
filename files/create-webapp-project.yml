@@ -1,3 +1,4 @@
+# Replace <USERNAME> with your Docker Hub username
 ---
 - hosts: all
   become: true
@@ -13,13 +14,12 @@
     ignore_errors: yes
 
   - name: Remove the current docker image
-    command: docker rmi atakantatli/simple-webapp-image:latest
+    command: docker rmi <USERNAME>/simple-webapp-image:latest
     ignore_errors: yes
     
   - name: Pull the Docker image from Dockerhub
-    command: docker pull atakantatli/simple-webapp-image:latest
+    command: docker pull <USERNAME>/simple-webapp-image:latest
 
   - name: Create a container
-    command: docker run -d --name simple-webapp-container -p 8080:8080 atakantatli/simple-webapp-image
-    
+    command: docker run -d --name simple-webapp-container -p 8080:8080 <USERNAME>/simple-webapp-image
     
